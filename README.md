@@ -41,7 +41,7 @@ main :: proc() {
 
     var_string := get_string("Prompt: ")
 
-    var_byte := get_byte("Prompt: ")
+    var_rune := get_rune("Prompt: ")
 }
 ```
 

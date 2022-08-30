@@ -401,7 +401,7 @@ get_string :: proc(str: string) -> (string, Error) {
     return string(buffer[:]), Error.None
 }
 
-get_byte :: proc(str: string) -> (byte, Error) {
+get_rune :: proc(str: string) -> (rune, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
     err := read_string(&buffer,'\n')
@@ -409,7 +409,7 @@ get_byte :: proc(str: string) -> (byte, Error) {
         delete(buffer)
         return ' ', Error(err)
     }
-    byte := buffer[0]
+    char := rune(buffer[0])
     delete(buffer)
-    return byte, Error.None
+    return char, Error.None
 }
