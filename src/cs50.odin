@@ -400,3 +400,16 @@ get_string :: proc(str: string) -> (string, Error) {
     }
     return string(buffer[:]), Error.None
 }
+
+get_byte :: proc(str: string) -> (byte, Error) {
+    buffer: [dynamic]byte
+    fmt.print(str)
+    err := read_string(&buffer,'\n')
+    if err != io.Error.None {
+        delete(buffer)
+        return ' ', Error(err)
+    }
+    byte := buffer[0]
+    delete(buffer)
+    return byte, Error.None
+}

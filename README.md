@@ -40,6 +40,8 @@ main :: proc() {
     var_bool := get_bool("Prompt: ")
 
     var_string := get_string("Prompt: ")
+
+    var_byte := get_byte("Prompt: ")
 }
 ```
 
