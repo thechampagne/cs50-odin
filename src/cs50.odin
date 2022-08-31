@@ -68,6 +68,7 @@ Error :: enum {
     False_f32,
     False_f64,
     Invalid_Int,
+    Invalid_Bool,
 	// Empty is returned when a procedure has not been implemented for an io.Stream
 	Empty          = -1, 
 }
@@ -89,6 +90,23 @@ Error :: enum {
     return io.Error.None
 }
 
+/// Read int from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_int("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return int, Error
 get_int :: proc(str: string) -> (int, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -108,6 +126,23 @@ get_int :: proc(str: string) -> (int, Error) {
     return int(value), Error.None
 }
 
+/// Read i8 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_i8("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return i8, Error
 get_i8 :: proc(str: string) -> (i8, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -127,6 +162,23 @@ get_i8 :: proc(str: string) -> (i8, Error) {
     return i8(value), Error.None
 }
 
+/// Read 16 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_16("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return 16, Error
 get_i16 :: proc(str: string) -> (i16, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -146,6 +198,23 @@ get_i16 :: proc(str: string) -> (i16, Error) {
     return i16(value), Error.None
 }
 
+/// Read i32 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_i32("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return i32, Error
 get_i32 :: proc(str: string) -> (i32, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -165,6 +234,23 @@ get_i32 :: proc(str: string) -> (i32, Error) {
     return i32(value), Error.None
 }
 
+/// Read i64 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_i64("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return i64, Error
 get_i64 :: proc(str: string) -> (i64, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -184,6 +270,23 @@ get_i64 :: proc(str: string) -> (i64, Error) {
     return i64(value), Error.None
 }
 
+/// Read i128 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_i128("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return i128, Error
 get_i128 :: proc(str: string) -> (i128, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -203,6 +306,23 @@ get_i128 :: proc(str: string) -> (i128, Error) {
     return i128(value), Error.None
 }
 
+/// Read uint from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_uint("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return uint, Error
 get_uint :: proc(str: string) -> (uint, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -222,6 +342,23 @@ get_uint :: proc(str: string) -> (uint, Error) {
     return uint(value), Error.None
 }
 
+/// Read u8 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_u8("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return u8, Error
 get_u8 :: proc(str: string) -> (u8, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -241,6 +378,23 @@ get_u8 :: proc(str: string) -> (u8, Error) {
     return u8(value), Error.None
 }
 
+/// Read u16 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_u16("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return u16, Error
 get_u16 :: proc(str: string) -> (u16, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -260,6 +414,23 @@ get_u16 :: proc(str: string) -> (u16, Error) {
     return u16(value), Error.None
 }
 
+/// Read u32 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_u32("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return u32, Error
 get_u32 :: proc(str: string) -> (u32, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -279,6 +450,23 @@ get_u32 :: proc(str: string) -> (u32, Error) {
     return u32(value), Error.None
 }
 
+/// Read u64 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_u64("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return u64, Error
 get_u64 :: proc(str: string) -> (u64, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -298,6 +486,23 @@ get_u64 :: proc(str: string) -> (u64, Error) {
     return u64(value), Error.None
 }
 
+/// Read u128 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_u128("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return u128, Error
 get_u128 :: proc(str: string) -> (u128, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -317,6 +522,23 @@ get_u128 :: proc(str: string) -> (u128, Error) {
     return u128(value), Error.None
 }
 
+/// Read f16 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_f16("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return f16, Error
 get_f16 :: proc(str: string) -> (f16, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -336,6 +558,23 @@ get_f16 :: proc(str: string) -> (f16, Error) {
     return f16(value), Error.None
 }
 
+/// Read f32 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_f32("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return f32, Error
 get_f32 :: proc(str: string) -> (f32, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -355,6 +594,23 @@ get_f32 :: proc(str: string) -> (f32, Error) {
     return f32(value), Error.None
 }
 
+/// Read f64 from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_f64("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return f64, Error
 get_f64 :: proc(str: string) -> (f64, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -374,6 +630,23 @@ get_f64 :: proc(str: string) -> (f64, Error) {
     return f64(value), Error.None
 }
 
+/// Read bool from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_bool("Prompt: ");
+///   fmt.println(input);
+/// }
+/// * *
+/// 
+/// @param str
+/// @return bool, Error
 get_bool :: proc(str: string) -> (bool, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -385,11 +658,29 @@ get_bool :: proc(str: string) -> (bool, Error) {
     value, ok := strconv.parse_bool(string(buffer[:]))
     delete(buffer)
     if !ok {
-        return false, Error.Invalid_Int
+        return false, Error.Invalid_Bool
     }
     return value, Error.None
 }
 
+/// Read string from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_string("Prompt: ");
+///   defer delete(input)
+///   fmt.println(input)
+/// }
+/// * *
+/// 
+/// @param str
+/// @return string, Error
 get_string :: proc(str: string) -> (string, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
@@ -401,6 +692,23 @@ get_string :: proc(str: string) -> (string, Error) {
     return string(buffer[:]), Error.None
 }
 
+/// Read rune from stdin
+/// 
+/// Example:
+/// * *
+/// package main
+///
+/// import "core:fmt"
+/// import "cs50"
+/// 
+/// main :: proc() {
+///   input, err := try cs50.get_rune("Prompt: ");
+///   fmt.println(input)
+/// }
+/// * *
+/// 
+/// @param str
+/// @return rune, Error
 get_rune :: proc(str: string) -> (rune, Error) {
     buffer: [dynamic]byte
     fmt.print(str)
